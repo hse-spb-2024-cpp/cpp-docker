@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  cppenv:
+    container_name: "hse-cpp"
+    image: "hse-cpp:v1.0.0"
+    working_dir: /hse-cpp
+    command: tail -F anything
+    volumes:
+      - ./:/hse-cpp
+    restart: on-failure
