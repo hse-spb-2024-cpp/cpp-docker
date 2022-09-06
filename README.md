@@ -19,18 +19,16 @@ Docker образ с зависимостями необходимыми для 
 
 ## Запуск в консоли
 
-1. Открываем консоль/терминал/etc.
-2. Запускаем команду `docker run --rm -it -v hse_cpp cuamckuu/hse-cpp:v1.0.0 /bin/bash`
-3. Вывод консоли меняется, что говорит о том, что мы внутри контейнера. Можно проверить версию компилятора `g++-12 --version`
+1. Открываем консоль/терминал/etc. в какой-нибудь рабочей папке проекта
+2. Клонируем нужный репозиторий с проверками компилятора `git clone https://github.com/hse-spb-2022-cpp/lectures.git`. Должна появиться папка с названием 'lectures'
+3. Запускаем команду `docker run --rm -it -v ${PWD}:/hse-cpp -w /hse-cpp cuamckuu/hse-cpp:v1.0.0 /bin/bash`. Это запустит консоль в той же папке, но с доступом к компиляторам
+4. Вывод консоли меняется, что говорит о том, что мы внутри контейнера. Можно проверить версию компилятора `g++-12 --version`
 
 ![Docker g++ version](./assets/docker_cmd.png)
 
-4. Клонируем нужный репозиторий с проверками компилятора `GIT_SSL_NO_VERIFY=1 git clone https://github.com/hse-spb-20
-22-cpp/lectures.git`
-![Docker Git Clone](./assets/docker_git_clone.png)
 5. Переходим в папку с нужными файлами `cd lectures/common/checkver/`
 6. Компилируем файл `g++-12 checkver.cpp`
-7. Запускаем файл `./a.out`
+7. Запускаем файл командой `./a.out`
 8. Сверяем Вывод
 
 ![Docker compile file](./assets/docker_compile.png)
