@@ -2,15 +2,55 @@
 
 Docker образ с зависимостями необходимыми для прохождения курса по C++
 
-## Использование
+## Установка
 
-1. Установить [Docker Desktop](https://www.docker.com/products/docker-desktop/) (подойдут и альтернативы, лишь бы поддерживали Dockerfile)
-2. Склонировать репозиторий `git clone https://github.com/cuamckuu/hse-cpp-docker.git`
-3. Перейти в папку и запустить `docker build . --tag hse-cpp:v1.0.0`
-4. Подождать сборки. Сборка с нуля длится около 20 минут
-5. Запустить контейнер `docker compose up -d`
-6. Подключиться к контейнеру из консоли `docker exec -it hse-cpp /bin/bash`
-7. Настроить IDE для подключения внутрь контейнера или использование Docker Toolchain
-- [Настройка CLion](https://www.jetbrains.com/help/clion/clion-toolchains-in-docker.html#windows-performance)
-- [Настройка VS Code](https://code.visualstudio.com/docs/remote/containers)
+1. Установить [Docker Desktop](https://www.docker.com/products/docker-desktop/) (При возникновении проблем, см. пункт "Проблемы с докером" ниже)
+2. Установить [git](https://git-scm.com/downloads), если его нет, пока не нужен, но пригодится позднее
+3. Открыть консоль/терминал/PowerShell и выполнить команду `docker pull cuamckuu/hse-cpp:v1.0.0`
+4. Скачать и установить [CLion](www.jetbrains.com/clion/download/)
 
+## Настройка CLion
+
+В целом используем [этот гайд](https://www.jetbrains.com/help/clion/clion-toolchains-in-docker.html).
+
+Если кратко: Нужно зайти в настройки и указать всё как на скрине:
+
+![Clion Docker Toolchain](./assets/clion.png)
+
+## Запуск в CLion
+
+![Clion Run](./assets/clion_run.png)
+
+## Запуск в консоли
+
+1. Открываем консоль/терминал/etc.
+2. Запускаем команду `docker run --rm -it -v hse_cpp cuamckuu/hse-cpp:v1.0.0 /bin/bash`
+3. Вывод консоли меняется, что говорит о том, что мы внутри контейнера. Можно проверить версию компилятора `g++-12 --version`
+
+![Docker g++ version](./assets/docker_cmd.png)
+
+4. Клонируем нужный репозиторий с проверками компилятора `GIT_SSL_NO_VERIFY=1 git clone https://github.com/hse-spb-20
+22-cpp/lectures.git`
+![Docker Git Clone](./assets/docker_git_clone.png)
+5. Переходим в папку с нужными файлами `cd lectures/common/checkver/`
+6. Компилируем файл `g++-12 checkver.cpp`
+7. Запускаем файл `./a.out`
+8. Сверяем Вывод
+
+![Docker compile file](./assets/docker_compile.png)
+
+## Проблемы с докером
+
+### Ошибка с WSL2
+
+Либо отключаем поддержку WSL2, если не получается, то доставляем WSL2 по инструкции по ссылке из ошибки
+
+![Docker WSL2 Error](./assets/docker_wsl2.png)
+
+### Ошибка с BIOS
+
+![Docker BIOS](./assets/docker_bios.png)
+
+### Ошибка с Hyper-V
+
+![Docker BIOS](./assets/docker_hyperv.png)
