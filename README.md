@@ -9,17 +9,13 @@ Docker образ с зависимостями необходимыми для 
 3. Открыть консоль/терминал/PowerShell и выполнить команду `docker pull cuamckuu/hse-cpp:v1.0.0`
 4. Скачать и установить [CLion](www.jetbrains.com/clion/download/)
 
-## Настройка CLion
+## Настройка и запуск CLion
 
 В целом используем [этот гайд](https://www.jetbrains.com/help/clion/clion-toolchains-in-docker.html).
 
 Если кратко: Нужно зайти в настройки и указать всё как на скрине:
 
 ![Clion Docker Toolchain](./assets/clion.png)
-
-## Запуск в CLion
-
-![Clion Run](./assets/clion_run.png)
 
 ## Запуск в консоли
 
