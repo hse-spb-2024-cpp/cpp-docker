@@ -7,7 +7,7 @@ Docker образ с зависимостями необходимыми для 
 1. Установить [Docker Desktop](https://www.docker.com/products/docker-desktop/) (При возникновении проблем, см. пункт "Проблемы с докером" ниже)
 2. Установить [git](https://git-scm.com/downloads), если его нет, пока не нужен, но пригодится позднее
 3. Открыть консоль/терминал/PowerShell и выполнить команду `docker pull cuamckuu/hse-cpp:v1.0.0`
-4. Скачать и установить [CLion](www.jetbrains.com/clion/download/)
+4. Скачать и установить [CLion](https://www.jetbrains.com/clion/download/)
 
 ## Настройка и запуск CLion
 
