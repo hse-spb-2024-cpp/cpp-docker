@@ -2,8 +2,8 @@ version: '3.4'
 
 services:
   cppenv:
-    container_name: "hse-cpp"
-    image: "cuamckuu/hse-cpp:v1.0.0"
+    container_name: "hse-cpp-2024"
+    image: "blonded04/cpp-docker"
     working_dir: /hse-cpp
     command: tail -F anything
     volumes:
